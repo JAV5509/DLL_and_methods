@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6628b236-af84-43c6-b253-2af28dfef193" name="Changes" comment="Creating the test case for NodeTest">
-      <change afterPath="$PROJECT_DIR$/src/com/company/DoublyLinkedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/DoublyLinkedListTest.java" afterDir="false" />
+    <list default="true" id="6628b236-af84-43c6-b253-2af28dfef193" name="Changes" comment="Get index method and test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/DoublyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/DoublyLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/DoublyLinkedListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/DoublyLinkedListTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +55,7 @@
       <recent name="com.company" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DoublyLinkedListTest.testAppend">
+  <component name="RunManager" selected="JUnit.DoublyLinkedListTest.testGetIndex">
     <configuration name="AlbumTest.testAlbum" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CA_2" />
       <extension name="coverage">
@@ -88,6 +88,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DoublyLinkedListTest.testGetIndex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CA_2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.company" />
+      <option name="MAIN_CLASS_NAME" value="com.company.DoublyLinkedListTest" />
+      <option name="METHOD_NAME" value="testGetIndex" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="NodeTest.Nodetest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CA_2" />
       <extension name="coverage">
@@ -106,6 +122,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DoublyLinkedListTest.testGetIndex" />
         <item itemvalue="JUnit.DoublyLinkedListTest.testAppend" />
         <item itemvalue="JUnit.NodeTest.Nodetest" />
         <item itemvalue="JUnit.AlbumTest.testAlbum" />
@@ -120,7 +137,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1667961717536</updated>
-      <workItem from="1667961720133" duration="2483000" />
+      <workItem from="1667961720133" duration="3896000" />
     </task>
     <task id="LOCAL-00001" summary="Creating the Album constructor and empty constructor along with the test class">
       <created>1667962545415</created>
@@ -143,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667963451604</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Adding assert Equals to the testAppend">
+      <created>1667964577375</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1667964577375</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,6 +188,8 @@
     <MESSAGE value="Creating the Album constructor and empty constructor along with the test class" />
     <MESSAGE value="Updating the Album test to implement &quot;assertEquals&quot;" />
     <MESSAGE value="Creating the test case for NodeTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creating the test case for NodeTest" />
+    <MESSAGE value="Adding assert Equals to the testAppend" />
+    <MESSAGE value="Get index method and test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Get index method and test" />
   </component>
 </project>

@@ -40,4 +40,40 @@ class DoublyLinkedListTest  {
 
     }
 
+    @Test
+    void testGetIndex() {
+
+        DoublyLinkedList<Album> dll = new DoublyLinkedList<>();
+        assertNull(dll.head);
+        assertNull(dll.tail);
+
+        ArrayList<String> artistNames = new ArrayList<>();
+        artistNames.add("Artist 1");
+        artistNames.add("Artist 2");
+
+        Album a1 = new Album(11, artistNames, "album 1", 1);
+        dll.append(a1);
+
+        Album a2 = new Album(22, artistNames, "album 2", 2);
+        dll.append(a2);
+
+        Album a3 = new Album(33, artistNames, "album 3", 3);
+        dll.append(a3);
+
+        Album a4 = new Album(44, artistNames, "album 44", 44);
+        dll.append(a4);
+
+        System.out.println(dll.toString());
+
+        System.out.println(dll.getIndex(a1));
+        System.out.println(dll.getIndex(a4));
+        //WHY IS MY EDGE CASE NOT WORKING??
+        //
+        // System.out.println(dll.getIndex(a6));
+
+
+
+
+    }
+
 }

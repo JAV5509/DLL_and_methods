@@ -34,6 +34,45 @@ public class DoublyLinkedList <T extends Comparable<T>> {
 
         //return node
         return toAppend;
+
+
+    }
+/*
+    public Node delete(int location) throws IllegalArgumentException{
+
+    }
+
+ */
+
+
+    public int getIndex(Album album) {
+
+        Node found = head;
+        int pos = -1;
+
+        //for cases in which the DLL is null
+        if (found == null) {
+
+            System.out.println("Im sorry but you must add nodes!");
+
+        }
+        //iterates through the linked list and evertime it iterates through a node the pos increase
+        //pos is storing the iterations, which is the index
+        while (found.album != album
+                && found.next != null) {
+
+            found = found.next;//previous;
+            //used to count the nodes interated through and calculate index
+            pos++;
+
+        }
+        if (found.album != album)
+            return -1;
+        // If the integer present in
+        // the doubly linked list
+        return (pos + 1);
+
+
     }
 
 
