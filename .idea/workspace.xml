@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6628b236-af84-43c6-b253-2af28dfef193" name="Changes" comment="Creating the Album constructor and empty constructor along with the test class">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/NodeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/AlbumTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/AlbumTest.java" afterDir="false" />
+    <list default="true" id="6628b236-af84-43c6-b253-2af28dfef193" name="Changes" comment="Creating the test case for NodeTest">
+      <change afterPath="$PROJECT_DIR$/src/com/company/DoublyLinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/DoublyLinkedListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +14,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -44,8 +41,9 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "create.test.in.the.same.root": "true"
   }
 }]]></component>
@@ -57,7 +55,7 @@
       <recent name="com.company" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.NodeTest.Nodetest">
+  <component name="RunManager" selected="JUnit.DoublyLinkedListTest.testAppend">
     <configuration name="AlbumTest.testAlbum" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CA_2" />
       <extension name="coverage">
@@ -69,6 +67,22 @@
       <option name="PACKAGE_NAME" value="com.company" />
       <option name="MAIN_CLASS_NAME" value="com.company.AlbumTest" />
       <option name="METHOD_NAME" value="testAlbum" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DoublyLinkedListTest.testAppend" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CA_2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.company" />
+      <option name="MAIN_CLASS_NAME" value="com.company.DoublyLinkedListTest" />
+      <option name="METHOD_NAME" value="testAppend" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -92,6 +106,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DoublyLinkedListTest.testAppend" />
         <item itemvalue="JUnit.NodeTest.Nodetest" />
         <item itemvalue="JUnit.AlbumTest.testAlbum" />
       </list>
@@ -105,7 +120,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1667961717536</updated>
-      <workItem from="1667961720133" duration="1395000" />
+      <workItem from="1667961720133" duration="2483000" />
     </task>
     <task id="LOCAL-00001" summary="Creating the Album constructor and empty constructor along with the test class">
       <created>1667962545415</created>
@@ -114,7 +129,21 @@
       <option name="project" value="LOCAL" />
       <updated>1667962545416</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Updating the Album test to implement &quot;assertEquals&quot;">
+      <created>1667963314374</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1667963314374</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Creating the test case for NodeTest">
+      <created>1667963451604</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1667963451604</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,6 +162,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Creating the Album constructor and empty constructor along with the test class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creating the Album constructor and empty constructor along with the test class" />
+    <MESSAGE value="Updating the Album test to implement &quot;assertEquals&quot;" />
+    <MESSAGE value="Creating the test case for NodeTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating the test case for NodeTest" />
   </component>
 </project>
