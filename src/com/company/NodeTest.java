@@ -20,6 +20,8 @@ class NodeTest {
 
         System.out.println(new_1.toString());
 
+        assertEquals("2324: 8 -- [Artist 1, Artist 2]", new_1.toString());
+
 
     }
 }
