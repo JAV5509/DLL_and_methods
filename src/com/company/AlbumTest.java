@@ -28,6 +28,8 @@ public class AlbumTest {
 
         System.out.println(tester_2.toString());
 
+        assertEquals("2324: 8 -- [Artist 1, Artist 2, Artist 3]", tester_1.toString());
+
 
     }
 
