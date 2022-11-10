@@ -163,7 +163,7 @@ public class DoublyLinkedList <T extends Comparable<T>> {
 
         Node new1 = new Node(album);
 
-
+        //Edge cases for out of bounds input
         if(location> counta){
             System.out.println("Not within bounds");
         }
@@ -175,7 +175,7 @@ public class DoublyLinkedList <T extends Comparable<T>> {
         if(head==null){
             System.out.println("Not within bounds");
         }
-
+        //for instances in which the person wants to append to the head
         if(location == 0 && head != null){
 
             new1.next = head; //assigns new node as the head
@@ -189,6 +189,7 @@ public class DoublyLinkedList <T extends Comparable<T>> {
 
 
         int size = counta;
+
         if (location == size){
 
             tail.next = new1;
@@ -236,9 +237,9 @@ public class DoublyLinkedList <T extends Comparable<T>> {
         }
 
         else {
-
+            //traverse through the dll
             while(tempJawn != null){
-
+                //append the current node that is being traverses
                 shuffledDll.add(tempJawn.album);
 
                 tempJawn = tempJawn.next;
@@ -268,19 +269,24 @@ public class DoublyLinkedList <T extends Comparable<T>> {
         DoublyLinkedList partitioned = new DoublyLinkedList();
          Node temp = this.head;
 
-         int count=0;
+         //int count=0;
+
+         //int albumNo = album.numberOfSongs;
 
 
 
          if(temp== null) System.out.println(noNodeerror);
+
          else {
              while (temp != null) {
                  {
 
-                     partitioned.append(temp.album);
+                     if (temp.album.numberOfSongs>=album.numberOfSongs){
+                         partitioned.append(temp.album);
 
-                     //temp = temp.next;
-                     count++;
+                     }
+
+                     temp = temp.next;
 
 
                     /*
@@ -295,15 +301,16 @@ public class DoublyLinkedList <T extends Comparable<T>> {
                      // }
 
                  }
-                 temp = temp.next;
+                 //temp = temp.next;
 
              }
 
-             int index = partitioned.getIndex(album);
+
+             //int index = partitioned.getIndex(album);
 
 
 
-        for(int i=0; i<index;i++){
+        /*for(int i=0; i<index;i++){
 
             Node tempNode = partitioned.head;
              partitioned.delete(i);
@@ -312,6 +319,8 @@ public class DoublyLinkedList <T extends Comparable<T>> {
 
 
          }
+
+         */
 
 
 
@@ -356,4 +365,9 @@ public class DoublyLinkedList <T extends Comparable<T>> {
         // return the result
         return stringBuilder.toString();
     }
+
+
+
+
+
 }
