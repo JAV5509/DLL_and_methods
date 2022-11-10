@@ -210,8 +210,10 @@ class DoublyLinkedListTest  {
 
         Album a6 = new Album(72,artistNames, "album 5", 11);
 
+
         System.out.println(dll.toString());
-        System.out.println(dll.shuffle());
+
+        assertEquals("22: 2 -- [Artist 1, Artist 2] -> 11: 1 -- [Artist 1, Artist 2] -> 44: 44 -- [Artist 1, Artist 2] -> 33: 3 -- [Artist 1, Artist 2] -> 88: 11 -- [Artist 1, Artist 2] -> NULL", dll.shuffle().toString());
 
     }
 
@@ -255,8 +257,8 @@ class DoublyLinkedListTest  {
 
 
         System.out.println(dll.toString());
-
-        System.out.println(dll.partition(a6).toString());
+        System.out.println(dll.partition(a4).toString());
+        assertEquals("44: 44 -- [Artist 1, Artist 2] -> 17: 80 -- [Artist 1, Artist 2] -> 56: 78 -- [Artist 1, Artist 2] -> NULL", dll.partition(a4).toString());
 
 
 
