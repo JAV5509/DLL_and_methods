@@ -194,8 +194,6 @@ public class DoublyLinkedList <T extends Comparable<T>> {
 
             tail.next = new1;
 
-            tail.previous = tail.previous;
-
             new1 = tail;
 
             new1.next = null;
@@ -256,8 +254,7 @@ public class DoublyLinkedList <T extends Comparable<T>> {
 
             for (int i=0; i<shuffledDll.size(); i++){
 
-                //tempJawn.album = shuffledDll.get(i);
-                //tempJawn = tempJawn.next;
+
 
                 newDll.append(shuffledDll.get(i));
             }
@@ -280,6 +277,8 @@ public class DoublyLinkedList <T extends Comparable<T>> {
 
 
          if(temp== null) System.out.println(noNodeerror);
+
+
 
          else {
              while (temp != null) {

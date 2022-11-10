@@ -85,6 +85,27 @@ class DoublyLinkedListTest  {
         dll.delete(4);
         System.out.println(dll.toString());
         assertEquals("22: 2 -- [Artist 1, Artist 2] -> 33: 3 -- [Artist 1, Artist 2] -> 44: 44 -- [Artist 1, Artist 2] -> 88: 11 -- [Artist 1, Artist 2] -> 17: 80 -- [Artist 1, Artist 2] -> 79: 9 -- [Artist 1, Artist 2] -> 56: 78 -- [Artist 1, Artist 2] -> NULL",dll.toString());
+        //System.out.println(dll.delete(7));
+        //System.out.println(dll.delete(-1));
+
+        try{
+            dll.delete(-1);
+        }
+        catch(IllegalArgumentException e){
+
+            assertEquals("Sorry this is out of bounds",e.getMessage());
+
+        }
+
+        try{
+            dll.delete(90);
+        }
+        catch(IllegalArgumentException e){
+
+            assertEquals("Sorry this is out of bounds",e.getMessage());
+
+        }
+
 
 
     }
@@ -137,10 +158,10 @@ class DoublyLinkedListTest  {
         assertEquals(0, dll.getIndex(a1));
         System.out.println(dll.getIndex(a4));
         assertEquals(3, dll.getIndex(a4));
-        //WHY IS MY EDGE CASE NOT WORKING??
-        //
         System.out.println(dll.getIndex(a10));
         assertEquals(-1,dll.getIndex(a10));
+
+
 
 
 
@@ -179,6 +200,15 @@ class DoublyLinkedListTest  {
         dll.insert(2,a6);
         System.out.println(dll.toString());
         assertEquals("11: 1 -- [Artist 1, Artist 2] -> 22: 2 -- [Artist 1, Artist 2] -> 72: 11 -- [Artist 1, Artist 2] -> 33: 3 -- [Artist 1, Artist 2] -> 44: 44 -- [Artist 1, Artist 2] -> 88: 11 -- [Artist 1, Artist 2] -> NULL", dll.toString());
+
+        try{
+            dll.insert(-1, a6);
+        }
+        catch(IllegalArgumentException e){
+
+            assertEquals("Sorry this is out of bounds",e.getMessage());
+
+        }
 
     }
 
@@ -255,10 +285,21 @@ class DoublyLinkedListTest  {
         Album a9 = new Album(56, artistNames, "album huh", 78);
         dll.append(a9);
 
+        Album a10 = new Album(56, artistNames, "album huh", 78);
+
 
         System.out.println(dll.toString());
         System.out.println(dll.partition(a4).toString());
         assertEquals("44: 44 -- [Artist 1, Artist 2] -> 17: 80 -- [Artist 1, Artist 2] -> 56: 78 -- [Artist 1, Artist 2] -> NULL", dll.partition(a4).toString());
+
+        try{
+            dll.partition(a10);
+        }
+        catch(IllegalArgumentException e){
+
+            assertEquals("Sorry this is out of bounds",e.getMessage());
+
+        }
 
 
 
