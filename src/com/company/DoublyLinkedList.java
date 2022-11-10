@@ -27,18 +27,23 @@ public class DoublyLinkedList <T extends Comparable<T>> {
 
         //check if list is empty
         if (head == null) {
+
             head = toAppend;
+
             tail = toAppend;
         }
 
         //if list length is one or more than one
         else {
             toAppend.previous = tail;
+
             tail.next = toAppend;
+
             tail = tail.next;
         }
 
         counta++;
+
         //return node
         return toAppend;
 
@@ -46,19 +51,26 @@ public class DoublyLinkedList <T extends Comparable<T>> {
     }
 
     public void delete(int location) throws IllegalArgumentException {
+
         int counter = 1;
+
         int i;
+
         // Error if the head is null
         if (head == null)
             throw new IllegalArgumentException("Sorry this is out of bounds");
+
         //If the index entered is less than 0, then throw the exception error
         if (location < 0)
             throw new IllegalArgumentException("Sorry this is out of bounds");
+
         // if the location enter is large than the number of nodes
         if (location > counta)
             throw new IllegalArgumentException("Sorry this is out of bounds");
+
         //if there are greater than 0 nodes and location is equal to 0
         int counterz = 0;
+
         if (location == 0) {
             //head value is updated
             head = head.next;
@@ -85,13 +97,17 @@ public class DoublyLinkedList <T extends Comparable<T>> {
         } else {
             //create a duplicate node of the head
             Node<T> temper = head;
+
             //iterate up to the index of the given location
             for (int j = 1; j < location; j++) {
+
                 //traverse through the duplicate node
                 temper = temper.next;
 
             }
+
             temper.next = temper.next.next;
+
             //once you hit the end of traversing (null)
             if (temper.next == null) {
 
@@ -135,6 +151,7 @@ public class DoublyLinkedList <T extends Comparable<T>> {
         //if the given object is not presented in the doubly linked list then return -1
         if (found.album != album)
             return -1;
+
         // If the integer present in
         // the doubly linked list
         return (pos + 1);
@@ -255,14 +272,14 @@ public class DoublyLinkedList <T extends Comparable<T>> {
 
 
 
-         if(temp== null) System.out.println("Empty List");
-         else{
-             while(temp != null){
-                // if(temp.album== album ){
+         if(temp== null) System.out.println(noNodeerror);
+         else {
+             while (temp != null) {
+                 {
 
                      partitioned.append(temp.album);
 
-                     temp = temp.next;
+                     //temp = temp.next;
                      count++;
 
 
@@ -275,20 +292,28 @@ public class DoublyLinkedList <T extends Comparable<T>> {
                      */
 
 
-
-                    // }
+                     // }
 
                  }
-                // temp = temp.next;
+                 temp = temp.next;
 
              }
 
-         int index = partitioned.getIndex(album);
+             int index = partitioned.getIndex(album);
+
 
 
         for(int i=0; i<index;i++){
 
+            Node tempNode = partitioned.head;
              partitioned.delete(i);
+
+             tempNode = tempNode.next;
+
+
+         }
+
+
 
          }
 
