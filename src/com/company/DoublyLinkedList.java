@@ -1,10 +1,17 @@
 package com.company;
 
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class DoublyLinkedList <T extends Comparable<T>> {
 
     protected Node head;
     protected Node tail;
+
+    int counta = 0;
+
+    String noNodeerror = "No nodes, please add nodes";
 
 
     public DoublyLinkedList() {
@@ -31,18 +38,76 @@ public class DoublyLinkedList <T extends Comparable<T>> {
             tail = tail.next;
         }
 
-
+        counta++;
         //return node
         return toAppend;
 
 
     }
-/*
-    public Node delete(int location) throws IllegalArgumentException{
+
+    public void delete(int location) throws IllegalArgumentException {
+        int counter = 1;
+        int i;
+        // Error if the head is null
+        if (head == null)
+            throw new IllegalArgumentException("Sorry this is out of bounds");
+        //If the index entered is less than 0, then throw the exception error
+        if (location < 0)
+            throw new IllegalArgumentException("Sorry this is out of bounds");
+        // if the location enter is large than the number of nodes
+        if (location > counta)
+            throw new IllegalArgumentException("Sorry this is out of bounds");
+        //if there are greater than 0 nodes and location is equal to 0
+        int counterz = 0;
+        if (location == 0) {
+            //head value is updated
+            head = head.next;
+            //if the head node is not null, traers
+            if (head != null) {
+
+                head.previous = null;
+
+            }
+
+            if (counta == 2) {
+
+                tail = head;
+
+            }
+
+            counterz = counta - 1;
+        } else if (location == counterz) {
+
+            tail = tail.previous;
+
+            tail.next = null;
+
+        } else {
+            //create a duplicate node of the head
+            Node<T> temper = head;
+            //iterate up to the index of the given location
+            for (int j = 1; j < location; j++) {
+                //traverse through the duplicate node
+                temper = temper.next;
+
+            }
+            temper.next = temper.next.next;
+            //once you hit the end of traversing (null)
+            if (temper.next == null) {
+
+                tail = temper;
+
+            } else {
+
+                temper.next.previous = temper;
+            }
+        }
+        //decrease the value of count to ensure the updated number of nodes is correct.
+        counta--;
 
     }
 
- */
+
 
 
     public int getIndex(Album album) {
@@ -56,16 +121,18 @@ public class DoublyLinkedList <T extends Comparable<T>> {
             System.out.println("Im sorry but you must add nodes!");
 
         }
-        //iterates through the linked list and evertime it iterates through a node the pos increase
-        //pos is storing the iterations, which is the index
+        //traverses through the doubly linked list
         while (found.album != album
                 && found.next != null) {
 
-            found = found.next;//previous;
+            found = found.next;//reassign the value of what is really head
             //used to count the nodes interated through and calculate index
             pos++;
 
+
+
         }
+        //if the given object is not presented in the doubly linked list then return -1
         if (found.album != album)
             return -1;
         // If the integer present in
@@ -74,6 +141,165 @@ public class DoublyLinkedList <T extends Comparable<T>> {
 
 
     }
+
+    public void insert(int location, Album album) throws IllegalArgumentException{
+
+        Node new1 = new Node(album);
+
+
+        if(location> counta){
+            System.out.println("Not within bounds");
+        }
+
+        if(location<0){
+            System.out.println("Not within bounds");
+        }
+
+        if(head==null){
+            System.out.println("Not within bounds");
+        }
+
+        if(location == 0 && head != null){
+
+            new1.next = head; //assigns new node as the head
+
+            new1.previous = null; //previous variable of the node is null considering it is the new head
+
+            head.previous = new1;
+
+            head = new1;
+        }
+
+
+        int size = counta;
+        if (location == size){
+
+            tail.next = new1;
+
+            tail.previous = tail.previous;
+
+            new1 = tail;
+
+            new1.next = null;
+
+            new1.previous = tail;
+        }
+
+        else {
+            Node temp = this.head;
+
+            int i=1;
+
+            while(i<location){
+
+                temp = temp.next;
+                i++;
+            }
+
+            new1.next = temp.next;
+
+            new1.previous = temp;
+
+            temp.next = new1;
+
+            new1.next.previous = new1;
+        }
+
+        counta++;
+    }
+
+    public DoublyLinkedList<T> shuffle() {
+
+        ArrayList<Album> shuffledDll = new ArrayList<>();
+
+        Node tempJawn = head;
+
+        if( tempJawn== null){
+            System.out.print(noNodeerror);
+        }
+
+        else {
+
+            while(tempJawn != null){
+
+                shuffledDll.add(tempJawn.album);
+
+                tempJawn = tempJawn.next;
+            }
+
+            for(int j=0; j< shuffledDll.size()- shuffledDll.size()%2; j =j +2){
+
+                Collections.swap(shuffledDll,j,j+1);
+            }
+
+            tempJawn = this.head;
+
+            for (int i=0; i<shuffledDll.size(); i++){
+
+                tempJawn.album = shuffledDll.get(i);
+                tempJawn = tempJawn.next;
+            }
+        }
+
+        return this;
+    }
+
+
+
+    public DoublyLinkedList<Album> partition(Album album) {
+
+        DoublyLinkedList partitioned = new DoublyLinkedList();
+         Node temp = this.head;
+
+         int count=0;
+
+
+
+         if(temp== null) System.out.println("Empty List");
+         else{
+             while(temp != null){
+                // if(temp.album== album ){
+
+                     partitioned.append(temp.album);
+
+                     temp = temp.next;
+                     count++;
+
+
+                    /*
+                     while(temp!= null)
+                         temp = temp.next;
+                         if(temp==null){
+                         break;
+
+                     */
+
+
+
+                    // }
+
+                 }
+                // temp = temp.next;
+
+             }
+
+         int index = partitioned.getIndex(album);
+
+
+        for(int i=0; i<index;i++){
+
+             partitioned.delete(i);
+
+         }
+
+        return partitioned;
+
+
+         }
+
+
+
+
 
 
 
