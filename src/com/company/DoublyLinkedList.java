@@ -230,6 +230,8 @@ public class DoublyLinkedList <T extends Comparable<T>> {
 
         ArrayList<Album> shuffledDll = new ArrayList<>();
 
+        DoublyLinkedList newDll = new DoublyLinkedList();
+
         Node tempJawn = head;
 
         if( tempJawn== null){
@@ -244,7 +246,7 @@ public class DoublyLinkedList <T extends Comparable<T>> {
 
                 tempJawn = tempJawn.next;
             }
-
+            //iteration that uses the swap package
             for(int j=0; j< shuffledDll.size()- shuffledDll.size()%2; j =j +2){
 
                 Collections.swap(shuffledDll,j,j+1);
@@ -254,12 +256,14 @@ public class DoublyLinkedList <T extends Comparable<T>> {
 
             for (int i=0; i<shuffledDll.size(); i++){
 
-                tempJawn.album = shuffledDll.get(i);
-                tempJawn = tempJawn.next;
+                //tempJawn.album = shuffledDll.get(i);
+                //tempJawn = tempJawn.next;
+
+                newDll.append(shuffledDll.get(i));
             }
         }
 
-        return this;
+        return newDll;
     }
 
 
